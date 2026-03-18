@@ -1,0 +1,81 @@
+CREATE TABLE giet (
+    roll INT PRIMARY KEY,
+    name VARCHAR(50),
+    address VARCHAR(100),
+    desig VARCHAR(50),
+    salary INT,
+    gender CHAR(1)
+);
+
+
+INSERT INTO giet (roll, name, address, desig, salary, gender) VALUES
+(101, 'aman', 'delhi', 'doctor', 25000, 'M'),
+(102, 'naman', 'gunupur', 'teacher', 15000, 'M'),
+(103, 'raman', 'rayagad', 'plumber', 15000, 'M'),
+(104, 'Navi', 'raipur', 'nurse', 15000, 'F'),
+(105, 'Pavi', 'raigarh', 'police', 25000, 'F'),
+(106, 'Ankit', 'china', 'singer', 45000, 'M'),
+(107, 'Umesh', 'vizag', 'dancer', 45000, 'M'),
+(108, 'ramesh', 'bihar', 'manager', 25000, 'M'),
+(109, 'mahesh', 'patna', 'thied', 55000, 'M');
+
+
+--1. Show all data from the giet table.
+SELECT * FROM giet;
+
+--2. Display only the name column.
+SELECT name FROM giet;
+
+--3. Display name and address of all employees.
+SELECT name,address FROM giet;
+
+--4. Show roll and salary of all employees.
+SELECT roll,salary FROM giet;
+
+--5. Display all employees whose name is 'aman'.
+SELECT * FROM giet WHERE name='aman';
+
+--6. Show employees who live in 'delhi'.
+SELECT * FROM giet WHERE address= 'delhi';
+
+--7. Display all employees whose gender is 'M'.
+SELECT * FROM giet WHERE gender= 'M';
+
+--8. Show employees whose designation is 'doctor'.
+SELECT * FROM giet WHERE desig='doctor';
+
+--9. Display employees having salary 15000.
+SELECT * FROM giet WHERE salary=15000;
+
+--10. Show employees with salary greater than 20000.
+SELECT * FROM giet WHERE salary>15000;
+
+--11. Display employees with salary less than 30000.
+SELECT * FROM giet WHERE salary<30000;
+
+--12. Show employees who are male AND have salary > 20000.
+SELECT * FROM giet WHERE salary>20000 and gender='M';
+
+--13. Display employees who are female OR live in 'raipur'.
+SELECT * FROM giet WHERE gender='F' or address= 'delhi';
+
+--14. Show employees whose name starts with 'a'.
+SELECT * FROM giet WHERE name like 'a%';
+
+--15. Display employees whose name ends with 'h'.
+SELECT * FROM giet WHERE name like '%h';
+
+--16. Show employees whose address contains 'pur'.
+SELECT * FROM giet WHERE address like '%pur%';
+
+--17. Display all employees sorted by name in ascending order.
+SELECT * FROM giet ORDER BY name ASC;
+
+--18. Show all employees sorted by salary in descending order.
+SELECT * FROM girt ORDER BY salary DESC;
+
+--19. Count total number of employees in the table.
+SELECT COUNT(*) AS total_employees FROM giet;
+
+--20. Count number of employees whose gender is 'M'.
+SELECT COUNT(*) AS male_count FROM giet WHERE gender = 'M';
